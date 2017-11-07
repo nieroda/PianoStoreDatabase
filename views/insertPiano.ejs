@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <form action='/insertpiano' method='POST'>
+            <div class='form-group'>
+                <label> Serial Number </label>
+                <input type='text' name='Piano[serial_number]' class='form-control' placeholder='Serial Number'>
+            </div>
+            <div class='form-group'>
+                <label>Brand</label>
+                <input type='text' name='Piano[brand]' class='form-control' placeholder='Brand'>
+            </div>
+            <div class='form-group'>
+                <label>Model</label>
+                <input type='text' name='Piano[model]' class='form-control' placeholder='Model'>
+            </div>
+            <div class='form-group'>
+                <label>Dealer Price</label>
+                <input type='text' name='Piano[dealer_price]' class='form-control' placeholder='Dealer Price'>
+            </div>
+            <button type='submit' class='btn btn-primary center-block'>Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

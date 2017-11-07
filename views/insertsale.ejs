@@ -1,0 +1,52 @@
+<% include ./partials/header %>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <form action='/insertsale' method='POST'>
+            <div class='form-group'>
+                <label> Purchaser First Name </label>
+                <input type='text' name='Sale[purchaser_first_name]' class='form-control' placeholder='Purchaser First Name'>
+            </div>
+            <div class='form-group'>
+                <label>Purchaser Last Name</label>
+                <input type='text' name='Sale[purchaser_last_name]' class='form-control' placeholder='Purchaser Last Name'>
+            </div>
+            <div class='form-group'>
+                <label>Purchaser Street</label>
+                <input type='text' name='Sale[purchaser_street]' class='form-control' placeholder='Purchaser Street'>
+            </div>
+            <div class='form-group'>
+                <label>Purchaser City</label>
+                <input type='text' name='Sale[purchaser_city]' class='form-control' placeholder='Purchaser City'>
+            </div>
+            <div class='form-group'>
+                <label> Purchaser Zip </label>
+                <input type='text' name='Sale[purchaser_zip]' class='form-control' placeholder='Purchaser Zip'>
+            </div>
+            <div class='form-group'>
+                <label> Purchaser Phone </label>
+                <input type='text' name='Sale[purchaser_phone]' class='form-control' placeholder='Purchaser Phone'>
+            </div>
+            <div class='form-group'>
+                <label> Serial Number </label>
+                <input type='text' name='Sale[serial_number]' class='form-control' placeholder='Serial Number'>
+            </div>
+            <div class='form-group'>
+                <label> Salesman ID </label>
+                <input type='text' name='Sale[salesman_id]' class='form-control' placeholder='Salesman ID'>
+            </div>
+            <div class='form-group'>
+                <label> Sale Date </label>
+                <input type='text' name='Sale[saledate]' class='form-control' placeholder='xxxx-xx-xx / 2017-11-05'>
+            </div>
+            <div class='form-group'>
+                <label> Sale Price </label>
+                <input type='text' name='Sale[sale_price]' class='form-control' placeholder='Sale Price'>
+            </div>
+            <button type='submit' class='btn btn-primary center-block'>Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

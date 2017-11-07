@@ -1,0 +1,68 @@
+<% include ./partials/header %>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <form action='/insertrental' method='POST'>
+            <div class='form-group'>
+                <label> Renter First Name </label>
+                <input type='text' name='Rental[renter_first_name]' class='form-control' placeholder='Renter First Name'>
+            </div>
+            <div class='form-group'>
+                <label>Renter Last Name</label>
+                <input type='text' name='Rental[renter_last_name]' class='form-control' placeholder='Renter Last Name'>
+            </div>
+            <div class='form-group'>
+                <label>Renter Street</label>
+                <input type='text' name='Rental[renter_street]' class='form-control' placeholder='Renter Street'>
+            </div>
+            <div class='form-group'>
+                <label>Renter City</label>
+                <input type='text' name='Rental[renter_city]' class='form-control' placeholder='Renter City'>
+            </div>
+            <div class='form-group'>
+                <label> Renter Zip </label>
+                <input type='text' name='Rental[renter_zip]' class='form-control' placeholder='Renter Zip'>
+            </div>
+            <div class='form-group'>
+                <label> Renter Phone </label>
+                <input type='text' name='Rental[renter_phone]' class='form-control' placeholder='Renter Phone'>
+            </div>
+            <div class='form-group'>
+                <label> Renter SSN </label>
+                <input type='password' name='Rental[renter_ssn]' class='form-control' placeholder='Renter SSN'>
+            </div>
+            <div class='form-group'>
+                <label> Rental Rate </label>
+                <input type='text' name='Rental[rental_rate]' class='form-control' placeholder='Rental Rate'>
+            </div>
+            <div class='form-group'>
+                <label> Renter's Relative First Name </label>
+                <input type='text' name='Rental[renter_relative_first_name]' class='form-control' placeholder='Renters Relative First Name'>
+            </div>
+            <div class='form-group'>
+                <label>Renter's Relative Last Name</label>
+                <input type='text' name='Rental[renter_relative_last_name]' class='form-control' placeholder='Renters Relative Last Name'>
+            </div>
+            <div class='form-group'>
+                <label> Date Started </label>
+                <input type='text' name='Rental[date_started]' class='form-control' placeholder='xxxx-xx-xx / 2017-11-05'>
+            </div>
+            <div class='form-group'>
+                <label> Date Ended </label>
+                <input type='text' name='Rental[date_ended]' class='form-control' placeholder='null' value='null'>
+            </div>
+            <div class='form-group'>
+                <label> Serial Number </label>
+                <input type='text' name='Rental[serial_number]' class='form-control' placeholder='Serial Number'>
+            </div>
+            <div class='form-group'>
+                <label> Salesman ID </label>
+                <input type='text' name='Rental[salesman_id]' class='form-control' placeholder='Salesman ID'>
+            </div>
+            <button type='submit' class='btn btn-primary center-block'>Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

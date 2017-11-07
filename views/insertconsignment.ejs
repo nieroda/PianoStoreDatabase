@@ -1,0 +1,60 @@
+<% include ./partials/header %>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <form action='/insertconsignment' method='POST'>
+            <div class='form-group'>
+                <label> Owner First Name </label>
+                <input type='text' name='Consignment[owner_first_name]' class='form-control' placeholder='Owner First Name'>
+            </div>
+            <div class='form-group'>
+                <label>Owner Last Name</label>
+                <input type='text' name='Consignment[owner_last_name]' class='form-control' placeholder='Owner Last Name'>
+            </div>
+            <div class='form-group'>
+                <label>Owner Cell</label>
+                <input type='text' name='Consignment[owner_cell]' class='form-control' placeholder='Owner Cell'>
+            </div>
+            <div class='form-group'>
+                <label>Owner Email</label>
+                <input type='text' name='Consignment[owner_email]' class='form-control' placeholder='Owner Email'>
+            </div>
+            <div class='form-group'>
+                <label> Owner Street </label>
+                <input type='text' name='Consignment[owner_street]' class='form-control' placeholder='Owner Street'>
+            </div>
+            <div class='form-group'>
+                <label> Owner City </label>
+                <input type='text' name='Consignment[owner_city]' class='form-control' placeholder='Owner City'>
+            </div>
+            <div class='form-group'>
+                <label> Owner Zip </label>
+                <input type='text' name='Consignment[owner_zip]' class='form-control' placeholder='Owner Zip'>
+            </div>
+            <div class='form-group'>
+                <label> Date Started </label>
+                <input type='text' name='Consignment[datestarted]' class='form-control' placeholder='xxxx-xx-xx / 2017-11-05'>
+            </div>
+            <div class='form-group'>
+                <label> Date Sold </label>
+                <input type='text' name='Consignment[datesold]' class='form-control' placeholder='null' value='null'>
+            </div>
+            <div class='form-group'>
+                <label> Salesman ID </label>
+                <input type='text' name='Consignment[salesman_id]' class='form-control' placeholder='Salesman ID'>
+            </div>
+            <div class='form-group'>
+                <label> Store Cut </label>
+                <input type='text' name='Consignment[store_cut]' class='form-control' placeholder='Store Cut'>
+            </div>
+            <div class='form-group'>
+                <label> Serial Number </label>
+                <input type='text' name='Consignment[serial_number]' class='form-control' placeholder='Serial Number'>
+            </div>
+            <button type='submit' class='btn btn-primary center-block'>Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>
