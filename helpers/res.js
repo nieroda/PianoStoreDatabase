@@ -105,11 +105,7 @@ exports.error = (req, res) => {
 exports.getsalesresult = (req, res) => {
     Promise.all([dbquery.getSales(), dbquery.getRentals(), dbquery.getSale(), dbquery.getConsign()])
     .then(result => {
-        let Sales  = result[0],
-            Rental = result[1],
-            Sale   = result[2],
-            Cons   = result[3];
-
+        let [ Sales, Rental, Sale, Cons ] = result;
         res.render('salesresult', {Sales, Rental, Sale, Cons});
     })
     .catch(err => {
