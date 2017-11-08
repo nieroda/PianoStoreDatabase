@@ -46,10 +46,7 @@ exports.getRental = (req, res) => {
 
 exports.addRental = (req, res) => {
     db.insertUniversal(req.body.Rental, 'Rental')
-    .then(result => {
-        console.log(result);
-        res.redirect('success');
-    })
+    .then(res.redirect('success'))
     .catch(err => {
         console.log(err);
         res.redirect('error');
@@ -62,10 +59,7 @@ exports.getConsign = (req, res) => {
 
 exports.addConsign = (req, res) => {
     db.insertUniversal(req.body.Consignment, 'Consignment')
-    .then(result => {
-        console.log(result);
-        res.redirect('success');
-    })
+    .then(res.redirect('success'))
     .catch(err => {
         console.log(err);
         res.redirect('error');
