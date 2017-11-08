@@ -22,5 +22,5 @@ app.use('/', myRoutes);
 
 
 app.listen(port, () => {
-    console.log(`App is running on port ${process.env.PORT}`);
+    console.log(`App is running on port ${port}`);
 })
