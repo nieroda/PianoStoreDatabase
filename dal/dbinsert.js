@@ -1,4 +1,3 @@
-
 import sql from 'mysql';
 import db from './dbconnection';
 

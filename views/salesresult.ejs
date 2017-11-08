@@ -2,6 +2,7 @@
 
 <div class='container'>
     <div class='table-responsive'>
+        <h3> Pianos Sold </h3>
         <table class='table table-bordered table-hover'>
             <tr class='active'>
                 <td>Brand</td>
@@ -11,7 +12,7 @@
                 <td>Profit</td>
                 <td>Salesman</td>
             </tr>
-            <% result.forEach((res) => { %>
+            <% Sales.forEach((res) => { %>
                <tr class='active'>
                    <td><%= res.brand %></td>
                    <td><%= res.model %></td>
@@ -19,6 +20,74 @@
                    <td><%= res.sale_price %></td>
                    <td><%= res.sale_price - res.dealer_price %></td>
                    <td><%= res.first_name %></td>
+               </tr> 
+            <% }); %>
+        </table>
+    </div>
+    
+    <div class='table-responsive'>
+        <h3> Rentals </h3>
+        <table class='table table-bordered table-hover'>
+            <tr class='active'>
+                <td>Renter First Name</td>
+                <td>Renter Last Name</td>
+                <td>Rental Rate</td>
+                <td>Date Started</td>
+                <td>Date Ended</td>
+                <td>Serial Number</td>
+            </tr>
+            <% Rental.forEach((res) => { %>
+               <tr class='active'>
+                   <td><%= res.renter_first_name %></td>
+                   <td><%= res.renter_last_name %></td>
+                   <td><%= res.rental_rate %></td>
+                   <td><%= res.date_started %></td>
+                   <td><%= res.date_ended === 'null' ? "NULL" : res.date_ended %></td>
+                   <td><%= res.serial_number %></td>
+               </tr> 
+            <% }); %>
+        </table>
+    </div>
+    
+        <div class='table-responsive'>
+        <h3> Sales </h3>
+        <table class='table table-bordered table-hover'>
+            <tr class='active'>
+                <td>Purchaser First Name</td>
+                <td>Purchaser Last Name</td>
+                <td>Sale Date</td>
+                <td>Sale Price</td>
+                <td>Dealer Price</td>
+            </tr>
+            <% Sale.forEach((res) => { %>
+               <tr class='active'>
+                   <td><%= res.purchaser_first_name %></td>
+                   <td><%= res.purchaser_last_name %></td>
+                   <td><%= res.saledate %></td>
+                   <td><%= res.sale_price %></td>
+                   <td><%= res.dealer_price %></td>
+               </tr> 
+            <% }); %>
+        </table>
+    </div>
+    
+     <div class='table-responsive'>
+        <h3> Consignment's </h3>
+        <table class='table table-bordered table-hover'>
+            <tr class='active'>
+                <td>Owner First Name</td>
+                <td>Owner Last Name</td>
+                <td>Date Started</td>
+                <td>Date Sold</td>
+                <td>Store Cut</td>
+            </tr>
+            <% Cons.forEach((res) => { %>
+               <tr class='active'>
+                   <td><%= res.owner_first_name %></td>
+                   <td><%= res.owner_last_name %></td>
+                   <td><%= res.datestarted %></td>
+                   <td><%= res.datesold === '0000-00-00' ? "NULL" : res.datesold%></td>
+                   <td><%= res.store_cut %></td>
                </tr> 
             <% }); %>
         </table>

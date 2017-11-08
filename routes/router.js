@@ -24,18 +24,23 @@ Router.route('/insertsale')
 Router.route('/insertrental')
     .get(helpers.getRental)
     .post(helpers.addRental)
+    
+Router.route('/updaterental')
+    .get(helpers.updateRental)
+    .put(helpers.putRental)
 
 Router.route('/insertconsignment')
     .get(helpers.getConsign)
     .post(helpers.addConsign)
+    
+
+Router.route('/updateconsignment')
+    .get(helpers.getUpdateConsign)
+    .put(helpers.updateConsign)
 
 Router.route('/salesresult')
     .get(helpers.getsalesresult)
  
- /*
-Router.route('/currentrentals')
-    .get(helpers.getcurrentrentals)
-  */
 
 
 module.exports = Router;

@@ -7,14 +7,11 @@ exports.getPiano = (req, res) => {
 
 exports.addPiano = (req, res) => {
     db.insertUniversal(req.body.Piano, 'Piano')
-    .then(result => {
-        console.log(result);
-        res.redirect('success');
-    })
+    .then(res.redirect('success'))
     .catch(err => {
         console.log(err);
         res.redirect('error');
-    })
+    });
 }
 
 exports.getsalesman = (req, res) => {
@@ -23,10 +20,7 @@ exports.getsalesman = (req, res) => {
 
 exports.addsalesman = (req, res) => {
     db.insertUniversal(req.body.Salesman, 'Salesman')
-    .then(result => {
-        console.log(result);
-        res.redirect('success');
-    })
+    .then(res.redirect('success'))
     .catch(err => {
         console.log(err);
         res.redirect('error');
@@ -39,10 +33,7 @@ exports.getSale = (req, res) => {
 
 exports.addSale = (req, res) => {
     db.insertUniversal(req.body.Sale, 'Sale')
-    .then(result => {
-        console.log(result);
-        res.redirect('success');
-    })
+    .then(res.redirect('success'))
     .catch(err => {
         console.log(err);
         res.redirect('error');
@@ -82,19 +73,31 @@ exports.addConsign = (req, res) => {
 }
 
 
+exports.getUpdateConsign = (req, res) => {
+    res.render('sellconsignment')
+}
 
-exports.getsalesresult = (req, res) => {
-    dbquery.getSales()
-    .then((result) => {
-        res.render('salesresult', {result});
-    })
-    .catch((err) => {
+exports.updateConsign = (req, res) => {
+    dbquery.soldConsignment(req.body.ConsignmentSale)
+    .then(res.redirect('success'))
+    .catch(err => {
+        console.log(err);
+        res.redirect('error');
+    });
+}
+
+exports.updateRental = (req, res) => {
+    res.render('endrental');
+}
+
+exports.putRental = (req, res) => {
+    dbquery.endRental(req.body.serial_number)
+    .then(res.redirect('success'))
+    .catch(err => {
         console.log(err);
         res.redirect('error');
     })
 }
-
-
 
 
 exports.success = (req, res) => {
@@ -103,4 +106,20 @@ exports.success = (req, res) => {
 
 exports.error = (req, res) => {
     res.render('error');
+}
+
+exports.getsalesresult = (req, res) => {
+    Promise.all([dbquery.getSales(), dbquery.getRentals(), dbquery.getSale(), dbquery.getConsign()])
+    .then(result => {
+        var Sales  = result[0],
+            Rental = result[1],
+            Sale   = result[2],
+            Cons   = result[3];
+
+        res.render('salesresult', {Sales, Rental, Sale, Cons});
+    })
+    .catch(err => {
+        console.log(err);
+        res.redirect('error');
+    });
 }
