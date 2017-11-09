@@ -22,7 +22,6 @@ exports.getSales = () => {
 exports.soldConsignment = (object) => {
   return new Promise((resolve, reject) => {
     let updatequery =  `update ConsignmentSale set datesold=CURDATE(), salesman_id=${connection.escape(object.salesman_id)} where serial_number=${connection.escape(object.serial_number)}`;
-    console.log(updatequery);
     connection.query(updatequery, (err, result) => {
       err ? reject(err) : resolve(result);
     });

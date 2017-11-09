@@ -73,7 +73,9 @@ exports.getUpdateConsign = (req, res) => {
 
 exports.updateConsign = (req, res) => {
     dbquery.soldConsignment(req.body.ConsignmentSale)
-    .then(res.redirect('success'))
+    .then(result => {
+      result.changedRows === 0 ? res.redirect('error') : res.redirect('success');
+    })
     .catch(err => {
         console.log(err);
         res.redirect('error');
@@ -86,11 +88,13 @@ exports.updateRental = (req, res) => {
 
 exports.putRental = (req, res) => {
     dbquery.endRental(req.body.serial_number)
-    .then(res.redirect('success'))
+    .then(result => {
+      result.changedRows === 0 ? res.redirect('error') : res.redirect('success');
+    })
     .catch(err => {
         console.log(err);
         res.redirect('error');
-    })
+    });
 }
 
 
